@@ -2,14 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
-## Fake Server
+## Install NGXS
 
-Step1: npm install json-server
-Step2: create db.json
-Step3: Create some initial Data in db.json file
-Step4: Edit package.json start property ["start": "concurrently \"ng serve\" \"json-server --watch db.json\" ",]
-Step5: npm install concurrently
-Step6: npm run start [For run the app]
+Step:1: npm install @ngxs/store --save  [Yarn: yarn add @ngxs/store]
+
+
+## Install NGXS Logger Plugin & Devtool Plugin
+
+Step2: npm install @ngxs/store@dev --save
+Step3: npm install @ngxs/logger-plugin@dev --save [Yarn: yarn add @ngxs/logger-plugin @ngxs/devtools-plugin --dev]
+
+
 
 ## Development server
 
