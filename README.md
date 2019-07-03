@@ -2,28 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
-## Devlelopment Steps
+## Fake Server
 
-MongoDB Username Details
-Username: kumaruidec
-Password: $Kumar3861 <--
-Username: kumariu
-Password: $Kumar4321 <--
-
-bootstrap Login: https://bootsnipp.com/snippets/GaZG0
-ng new <AppName> --style=scss --routing
-
-Install BootStrap
-Step1: npm install bootstrap --save
-Step2: Open angular.json
-"styles": [
-  "src/styles.scss",
-  "node_modules/bootstrap/dist/css/bootstrap.min.css"
-],  ----- [or] -------
-
-There are many ways to do that. The simpest method is by using the [src/styles.css]file and adding the following code:
-URL: https://www.techiediaries.com/angular-bootstrap-ui/
-@import "~bootstrap/dist/css/bootstrap.css";
+Step1: npm install json-server
+Step2: create db.json
+Step3: Create some initial Data in db.json file
+Step4: Edit package.json start property ["start": "concurrently \"ng serve\" \"json-server --watch db.json\" ",]
+Step5: npm install concurrently
+Step6: npm run start [For run the app]
 
 ## Development server
 
