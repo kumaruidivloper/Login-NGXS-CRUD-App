@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
+## Devlelopment Steps
+
+MongoDB Username Details
+Username: kumaruidec
+Password: $Kumar3861 <--
+Username: kumariu
+Password: $Kumar4321 <--
+
+bootstrap Login: https://bootsnipp.com/snippets/GaZG0
+ng new <AppName> --style=scss --routing
+
+Install BootStrap
+Step1: npm install bootstrap --save
+Step2: Open angular.json
+"styles": [
+  "src/styles.scss",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
