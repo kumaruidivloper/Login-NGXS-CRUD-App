@@ -25,5 +25,16 @@
         "userId": 5,
         "name": "User_005"
       }
-    ]
+    ],
+	"Assessment_Details": [{
+    "title": "title-1",
+    "skill-tags": [
+      {
+        "name": "java",
+        "name": "javascript"
+      }
+    ],
+    "description": "description"
+  }
+  ]
   }
