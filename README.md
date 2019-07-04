@@ -1,31 +1,27 @@
-## Create BackEnd Server
+## Create BackEnd Server Routes-Api
 
-Step1: Create Server Folder
-Step2: Inside the server folder run [npm init --yes] This command create package.json file inside the server folder
-Step3: Install dependency cmd [npm install express body-parser --save] 
-Express is a web-server,
-body parser is middelware to handle form data such us handle form data / login form
-Step4: Create server.js file
-Step5: Past Below code:
+Step1: Create routes folder inside the server folder then routes --> api.json then create api.json inside routes folder
+
+Step2: Past Below code in api.json file
+
 const express = require('express');
-const bodyParser = require('body-parser');
+const router = express.Router();
 
-const PORT = 5000
+router.get('/', (req, res)=> {
+    res.send('From API Route')
+})
 
-const app = express();
+module.exports = router;
 
-app.use(bodyParser.json())
+Step3: Tell our server use this route go-back to server
 
+[add below code in server.js]
+const api = require('./routes/api')
+
+app.use('/api', api);
+Paste Above this method
 app.get('/',  function(req, res){
     res.send('Hello from server')
 })
 
-app.listen(PORT, function(){
-    console.log('Server running on localhost:' + PORT);
-})
-
-Step6: run server [node server]
-
-
-## Server_Creation_Overview
-![Server_Creation_Overview](https://user-images.githubusercontent.com/30646609/60651674-574b9480-9e64-11e9-99fb-9d589bfc6e70.JPG)
+Step4: Restart the node server then open http://localhost:3000/api
