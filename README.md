@@ -64,3 +64,9 @@ router.post('/login', (req, res) => {
 })
 
 module.exports = router;
+
+## Authentication-Sequence-Diagram
+![Authentication-Sequence-Diagram](https://user-images.githubusercontent.com/30646609/60685588-7d535200-9ec1-11e9-85e8-fb50fb1f17b9.JPG)
+
+## JSON-Web-Tokens
+![JSON-Web-Tokens](https://user-images.githubusercontent.com/30646609/60685596-88a67d80-9ec1-11e9-8b33-836841357e51.JPG)
