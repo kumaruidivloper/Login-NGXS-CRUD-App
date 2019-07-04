@@ -42,7 +42,7 @@ router.post('/login', (req, res) => {
             console.log(error)
         } else {
             if(!user) {
-                res.status(401).sent('Invalid Email')
+                res.status(401).send('Invalid Email')
             } else if (user.password !== userData.password  ) {
                 res.status(401).send('Invalid password')
             } else {
