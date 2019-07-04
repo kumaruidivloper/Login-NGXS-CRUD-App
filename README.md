@@ -1,2 +1,1 @@
-## Folder_Structure_Image
-cdc
+## Application_Folder_Structure_Image
