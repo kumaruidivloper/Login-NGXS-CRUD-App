@@ -15,6 +15,7 @@ Step3: npm install @ngxs/logger-plugin@dev --save [Yarn: yarn add @ngxs/logger-p
 ## NGXS/NGRX-Redux-Architecture
 
 ![NGXS-2](https://user-images.githubusercontent.com/30646609/60645886-87d90180-9e57-11e9-818d-d1c6f8eea6fd.png)
+![NGXS-1](https://user-images.githubusercontent.com/30646609/60645850-798ae580-9e57-11e9-9280-3a7a131b73e2.png)
 
 
 ## Angular Vs React
