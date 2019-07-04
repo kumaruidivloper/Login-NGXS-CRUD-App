@@ -37,10 +37,6 @@ router.get('/', (req, res)=> {
 
 module.exports = router;
 
-## Mongoose-DB-Connection-Image
-
-![Mongoose-DB-Connection-Image](https://user-images.githubusercontent.com/30646609/60672643-84fc0200-9e93-11e9-8f57-dd7fabc25cf2.JPG)
-
 
 Step18: Register new user routes in api.js file Past below code
 const express = require('express');
@@ -127,3 +123,7 @@ router.post('/login', (req, res) => {
 })
 
 module.exports = router;
+
+## Mongoose-DB-Connection-Image
+
+![Mongoose-DB-Connection-Image](https://user-images.githubusercontent.com/30646609/60672643-84fc0200-9e93-11e9-8f57-dd7fabc25cf2.JPG)
