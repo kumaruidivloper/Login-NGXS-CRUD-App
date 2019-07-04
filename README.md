@@ -12,7 +12,14 @@ Step:1: npm install @ngxs/store --save  [Yarn: yarn add @ngxs/store]
 Step2: npm install @ngxs/store@dev --save
 Step3: npm install @ngxs/logger-plugin@dev --save [Yarn: yarn add @ngxs/logger-plugin @ngxs/devtools-plugin --dev]
 
+## NGXS/NGRX-Redux-Architecture
 
+![NGXS-2](https://user-images.githubusercontent.com/30646609/60645886-87d90180-9e57-11e9-818d-d1c6f8eea6fd.png)
+
+
+## Angular Vs React
+
+![Angular-Vs-React](https://user-images.githubusercontent.com/30646609/60645904-92939680-9e57-11e9-86f9-de5a38adc76c.jpg)
 
 ## Development server
 
