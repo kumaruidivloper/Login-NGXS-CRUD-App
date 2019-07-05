@@ -9,6 +9,7 @@ import { RegisterComponent } from './features/register/register.component';
 import { LoginComponent } from './features/login/login.component';
 import { CustomerComponent } from './features/customer/customer.component';
 import { TokenInterceptorService } from './core/interceptors/token-interceptor.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TokenInterceptorService } from './core/interceptors/token-interceptor.s
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
