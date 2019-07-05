@@ -104,8 +104,8 @@ export class RegisterComponent {
     .subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/customer']);
+        // localStorage.setItem('token', res.token);
+        this.router.navigate(['/login']);
       },
       err => console.log(err)
     );

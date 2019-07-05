@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
@@ -10,8 +10,11 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  public returnUrl: string;
+  public loginForm: FormGroup;
+
   constructor(
+    private route: ActivatedRoute,
     private auth: AuthService,
     private router: Router,
     private fb: FormBuilder) {
@@ -25,7 +28,12 @@ export class LoginComponent implements OnInit {
       });
     }
 
-  ngOnInit() {
+    ngOnInit() {
+      // reset login status
+      this.auth.logoutUser();
+
+      // get return url from route parameters or default to '/'
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   loginUser() {
