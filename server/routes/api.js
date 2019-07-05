@@ -16,9 +16,84 @@ mongoose.connect(db, err => {
     }
 })
 
-router.get('/', (req, res)=> {
-    res.send('From API Route')
-})
+function verifyToken(req, res, next) {
+    if (!req.headers.authorization) {
+        return res.status(401).send('Unauthorized request')
+    } 
+    let token = req.headers.authorization.split(' ')[1]
+    console.log(token);
+    if (token === 'null') {
+        return res.status(401).send('Unauthorized request')
+    }
+    jwt.verify(token, 'secretKey', function(err, payload) {
+             if(err){
+                 return res.status(401).send('Unauthorized request')
+             }else{
+                 req.userId = payload.subject
+                 next()       
+            }    
+          }); 
+    //let payload = jwt.verify(token, 'secretKey');
+  
+    //console.log(payload);
+    // try{
+    //  let payload = jwt.verify(token, 'secretKey');
+    // }catch(err) {  
+    //   console.log('inside error');
+    //   return res.status(401).send('Unauthorized request');
+    // }
+    //if(!payload) {
+        //return res.status(401).send('Unauthorized request')
+    //}
+    //req.userId = payload.subject
+    //next()
+  }
+
+// router.get('/', (req, res)=> {
+//     res.send('From API Route')
+// })
+
+router.get('/customer', verifyToken, (req, res) => {
+    let specialEvents = [
+      {
+        "_id": "1",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "2",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "3",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "4",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "5",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "6",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      }
+    ]
+    res.json(specialEvents)
+  })
 
 
 // Register Router Function
