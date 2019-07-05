@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../app/core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Login-NGXS-CRUD-App';
+
+  constructor(private authService: AuthService) {}
 }
