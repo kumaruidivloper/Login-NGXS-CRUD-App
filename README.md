@@ -1,4 +1,4 @@
-## Auth Guard Creation
+## Register Form Validation
 
-Step1: ng g guard (guard-name)
+https://codinglatte.com/posts/angular/cool-password-validation-angular/
 
