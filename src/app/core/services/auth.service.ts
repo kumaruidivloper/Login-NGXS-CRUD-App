@@ -16,7 +16,8 @@ export class AuthService {
 
   loginUser(user) {
     console.log(user);
-    return this.http.post<any>(this.loginUrl, user);
+    return this.http
+    .post<{token: string, expiresIn: number}>(this.loginUrl, user);
   }
 
   loggedIn() {

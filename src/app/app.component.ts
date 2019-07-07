@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../app/core/services/auth.service';
 
 @Component({
@@ -6,8 +6,12 @@ import { AuthService } from '../app/core/services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Login-NGXS-CRUD-App';
 
   constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+  }
 }
+

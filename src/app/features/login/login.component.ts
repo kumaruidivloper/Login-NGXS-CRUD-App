@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   public returnUrl: string;
   public loginForm: FormGroup;
+  public token: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,7 +41,16 @@ export class LoginComponent implements OnInit {
     this.auth.loginUser(this.loginForm.value)
     .subscribe(
       res => {
-        alert(res);
+        // alert(res);
+        const token = res.token;
+        this.token = token;
+        if (token) {
+          const expiresInDuration = res.expiresIn;
+          console.log(expiresInDuration);
+          setTimeout(() => {
+            this.auth.logoutUser();
+          }, expiresInDuration * 3);
+        }
         console.log(res);
         localStorage.setItem('token', res.token);
         this.router.navigate(['/customer']);
