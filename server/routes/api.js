@@ -53,7 +53,7 @@ function verifyToken(req, res, next) {
 //     res.send('From API Route')
 // })
 
-router.get('/customer', verifyToken, (req, res) => {
+router.get('/user', verifyToken, (req, res) => {
     let specialEvents = [
       {
         "_id": "1",

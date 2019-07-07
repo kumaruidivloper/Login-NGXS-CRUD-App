@@ -1,0 +1,16 @@
+<div class="container">
+    <h4 class="m-3">User Details</h4>
+    <div class="col" *ngIf="userSelected">
+      <div class="row">
+        <label class="col-2">User Id</label>
+        <span class="col-2" >{{userSelected.userId}}</span>
+      </div>
+      <div class="row">
+        <label class="col-2">User Name</label>
+        <span class="col-2">{{userSelected.name}}</span>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary" type="button" [routerLink]="['/user']">Cancel</button>
+      </div>
+      </div>
+</div>

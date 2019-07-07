@@ -1,40 +1,31 @@
 {
-    "sampleProducts": [
-      {
-        "id": 1,
-        "userId": 1,
-        "name": "User_001"
-      },
-      {
-        "id": 2,
-        "userId": 2,
-        "name": "User_002"
-      },
-      {
-        "id": 3,
-        "userId": 3,
-        "name": "User_003"
-      },
-      {
-        "id": 4,
-        "userId": 4,
-        "name": "User_004"
-      },
-      {
-        "id": 5,
-        "userId": 5,
-        "name": "User_005"
-      }
-    ],
-	"Assessment_Details": [{
-    "title": "title-1",
-    "skill-tags": [
-      {
-        "name": "java",
-        "namee": "javascript"
-      }
-    ],
-    "description": "description"
-  }
+  "sampleProducts": [
+    {
+      "id": 4,
+      "userId": 4,
+      "name": "User_004"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "name": "User_005"
+    },
+    {
+      "id": 6,
+      "userId": 400,
+      "name": "Kumar"
+    }
+  ],
+  "Assessment_Details": [
+    {
+      "title": "title-1",
+      "skill-tags": [
+        {
+          "name": "java",
+          "namee": "javascript"
+        }
+      ],
+      "description": "description"
+    }
   ]
-  }
+}

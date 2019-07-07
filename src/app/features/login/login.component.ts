@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.auth.logoutUser();
 
       // get return url from route parameters or default to '/'
-      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   loginUser() {
@@ -49,11 +49,11 @@ export class LoginComponent implements OnInit {
           console.log(expiresInDuration);
           setTimeout(() => {
             this.auth.logoutUser();
-          }, expiresInDuration * 3);
+          }, expiresInDuration * 3000);
         }
         console.log(res);
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/customer']);
+        this.router.navigate(['/user']);
       },
       err => console.log(err)
     );

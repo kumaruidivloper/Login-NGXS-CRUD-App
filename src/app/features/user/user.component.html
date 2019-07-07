@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="container">
+            <div class="jumbotron">
+              <h1 class="display-4">Welcome</h1>
+              <p class="lead">Please select your option below</p>
+              <hr class="my-4">
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" [routerLink]="['/user']" role="button">Customer</a>
+              </p>
+            </div>
+          </div>
+        <router-outlet></router-outlet> 
+      <!-- <app-form [event]="clickedEvent"></app-form> -->
+    </div>
+    <!-- <div class="col-md-6">
+      <app-list (eventClicked)="childEventClicked($event)"></app-list>
+    </div> -->
+  </div>
+</div>
