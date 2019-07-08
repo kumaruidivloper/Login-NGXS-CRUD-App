@@ -53,9 +53,9 @@ export class UserFormComponent implements OnInit {
   getUser(id: number) {
       this.userService.selectedUsers(id).subscribe(selectedUser => {
           this.userForm.patchValue({
-              id: selectedUser.id,
-              userId: selectedUser.userId,
-              name: selectedUser.name
+            //   id: selectedUser.id,
+            //   userId: selectedUser.userId,
+            //   name: selectedUser.name
           });
       });
   }

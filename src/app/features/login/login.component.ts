@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   public returnUrl: string;
   public loginForm: FormGroup;
   public token: string;
+  public errorMsg: {};
 
   constructor(
     private route: ActivatedRoute,
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/user']);
       },
-      err => console.log(err)
+      err => this.errorMsg = err.error
     );
   }
 
