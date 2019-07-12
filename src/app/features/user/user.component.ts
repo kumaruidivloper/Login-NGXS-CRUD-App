@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
       err => {
         if (err instanceof HttpErrorResponse) {
            if (err.status === 401) {
-            this.router.navigate(['user/user']);
+            this.router.navigate(['user']);
            }
         }
       }
