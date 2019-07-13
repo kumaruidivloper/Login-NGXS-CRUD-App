@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { DeleteUser, GetUsers, SetSelectedUser } from '../../user/+state/user.action';
+import { DataService } from '../../../core/services/data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -17,6 +18,7 @@ export class UserListComponent implements OnInit {
   public gridLength: object;
   public modalRef: BsModalRef;
   public message: string;
+  public isAction: string;
   public selectedUser: number;
   public selectedId: number;
   public type: string;
@@ -26,6 +28,7 @@ export class UserListComponent implements OnInit {
   constructor(
     private store: Store,
     private router: Router,
+    private data: DataService,
     private modalService: BsModalService) {
   }
 
@@ -37,6 +40,7 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.isAction = message);
     this.users.subscribe(res => {
         this.gridLength = res;
         console.log(this.gridLength);
@@ -62,13 +66,21 @@ export class UserListComponent implements OnInit {
 
   editUser(payload: User, type) {
       this.type = type;
-      console.log(type);
+      this.data.changeMessage(this.type);
       this.store.dispatch(new SetSelectedUser(payload));
   }
 
   userDetail(payload: User, type) {
+      this.type = type;
       console.log(type);
+      this.data.changeMessage(this.type);
       this.store.dispatch(new SetSelectedUser(payload));
+  }
+
+  addUser(type) {
+    this.type = type;
+    this.data.changeMessage(this.type);
+    // this.router.navigateByUrl('adduser');
   }
 
 }

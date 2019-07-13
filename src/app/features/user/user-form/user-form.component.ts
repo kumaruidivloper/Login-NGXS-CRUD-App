@@ -7,6 +7,7 @@ import { AddUser, UpdateUser } from './../+state/user.action';
 import { Observable } from 'rxjs';
 import { User } from '../../../core/interfaces/user.model';
 import { UserService } from '../../../core/services/user.service';
+import { DataService } from '../../../core/services/data.service';
 
 @Component({
   selector: 'app-user-form',
@@ -19,17 +20,22 @@ export class UserFormComponent implements OnInit {
   public userForm: FormGroup;
   public editUser = false;
   public isDisable = false;
+  public isAction: string;
 
   constructor(
       private fb: FormBuilder,
       private store: Store,
       private route: ActivatedRoute,
       private userService: UserService,
+      private data: DataService,
       private router: Router) {
       this.createForm();
   }
 
   ngOnInit() {
+      this.data.currentMessage.subscribe(message => this.isAction = message);
+      localStorage.setItem('action', this.isAction);
+      console.log(this.isAction);
       const id = +this.route.snapshot.paramMap.get('id');
       console.log(id);
       if (id > 0) {
@@ -53,9 +59,9 @@ export class UserFormComponent implements OnInit {
   getUser(id: number) {
       this.userService.selectedUsers(id).subscribe(selectedUser => {
           this.userForm.patchValue({
-            //   id: selectedUser.id,
-            //   userId: selectedUser.userId,
-            //   name: selectedUser.name
+              id: selectedUser.id,
+              userId: selectedUser.userId,
+              name: selectedUser.name
           });
       });
   }

@@ -1,10 +1,10 @@
-<h4 class="m-3">User Form</h4>
+<h4 class="m-3"><span *ngIf="isAction !== 'AddUser'">User</span> {{isAction}} <span>Form</span></h4>
 <div class="card mt-3">
     <div class="card-body">
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label class="col-md-4">User Id</label>
-                <input type="number" class="form-control" formControlName="userId" #userId/>
+                <input type="number" class="form-control" [readonly]="isAction === 'Detail'" formControlName="userId" #userId/>
                 <div *ngIf="userForm.controls['userId'].invalid && (userForm.controls['userId'].dirty || userForm.controls['userId'].touched)"class="alert alert-danger">
                     <div *ngIf="userForm.controls['userId'].errors.required">
                         User Id is required.
@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label class="col-md-4">User Name</label>
-                <input type="title" class="form-control" formControlName="name" #name/>
+                <input type="title" class="form-control" [readonly]="isAction === 'Detail'" formControlName="name" #name/>
                 <div *ngIf="userForm.controls['name'].invalid && (userForm.controls['name'].dirty || userForm.controls['name'].touched)"class="alert alert-danger">
                     <div *ngIf="userForm.controls['name'].errors.required">
                         Title is required.
@@ -21,11 +21,11 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit"class="btn btn-success mr-1"
+                <button type="submit"class="btn btn-success mr-1" *ngIf="isAction !== 'Detail'"
                         [disabled]="userForm.pristine || userForm.invalid">Submit
                 </button>
                 <button type="button" class="btn btn-primary mr-1" [routerLink]="['/user']">Cancel</button>
-                <button type="button" class="btn btn-danger" [disabled]="isDisable || userForm.pristine || userForm.invalid" (click)="clearForm()">Reset</button>
+                <button type="button" class="btn btn-danger" [disabled]="isDisable || userForm.pristine || userForm.invalid" (click)="clearForm()" *ngIf="isAction !== 'Detail'">Reset</button>
             </div>
         </form>
     </div>

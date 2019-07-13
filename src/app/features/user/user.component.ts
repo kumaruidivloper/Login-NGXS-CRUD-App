@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
   public customer = [];
+  public message: string;
 
-  constructor(private customerService: UserService, private router: Router) { }
+  constructor(
+    private customerService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
     this.customerService.fetchUsers()

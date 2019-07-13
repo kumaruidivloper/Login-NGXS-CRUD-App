@@ -5,7 +5,7 @@
           <h4>Customer List</h4>
         </div>
         <div class="col-md-6 w3-padding-16">
-          <button type="button" class="btn btn-primary float-right" [routerLink]="['adduser']"><i class="fa fa-user-circle"></i> Add User</button>
+          <button type="button" class="btn btn-primary float-right" (click)="addUser('AddUser')" [routerLink]="['adduser']"><i class="fa fa-user-circle"></i> Add User</button>
           <!-- <button type="button" class="btn btn-primary float-right mr-2" [routerLink]="['']"><i class="fa fa-home"></i> Home</button> -->
         </div>
       </div>
@@ -24,10 +24,10 @@
             <td>{{ user.userId }}</td>
             <td>{{ user.name }}</td>
             <td>
-              <button class="btn btn-info" (click)="userDetail(user, 'detail')" [routerLink]="[user.id, 'details']"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+              <button class="btn btn-info" (click)="userDetail(user, 'Detail')" [routerLink]="[user.id, 'details']"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
             </td>
             <td>
-              <button type="button" class="btn btn-warning" (click)="editUser(user, 'update')" [routerLink]="[user.id, 'edit']"><i class="fa fa-edit"></i></button>
+              <button type="button" class="btn btn-warning" (click)="editUser(user, 'Update')" [routerLink]="[user.id, 'edit']"><i class="fa fa-edit"></i></button>
             </td>
             <td>
               <button type="button" class="btn btn-danger" (click)="openModal(template,user)"><i class="fa fa-trash"></i></button>
