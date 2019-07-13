@@ -14,10 +14,21 @@
         <a class="nav-link" routerLink="/special" routerLinkActive="active">Members</a>
       </li> -->
     </ul>
+    <ul class="nav navbar-nav ml-auto" *ngIf="authService.loggedIn()">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user-circle mr-2"> </i>Admin</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item">Reports</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a style="cursor:pointer" class="dropdown-item" (click)="authService.logoutUser()">Logout <i class="fa fa-sign-out"></i></a>
+            </div>
+        </li>
+    </ul>
     <ul class="navbar-nav">
         <a class="nav-link" *ngIf="!authService.loggedIn()"  routerLink="/login" routerLinkActive="active"><i class="fa fa-sign-in"></i> Login</a>
         <a class="nav-link" *ngIf="!authService.loggedIn()"   routerLink="/register" routerLinkActive="active"><i class="fa fa-user-plus"></i> Register</a>
-        <a class="nav-link" *ngIf="authService.loggedIn()" style="cursor:pointer" (click)="authService.logoutUser()">Logout <i class="fa fa-sign-out"></i></a>
+        <!-- <a class="nav-link" *ngIf="authService.loggedIn()" style="cursor:pointer" (click)="authService.logoutUser()">Logout <i class="fa fa-sign-out"></i></a> -->
     </ul>
   </div>
 </nav>    
