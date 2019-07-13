@@ -1,3 +1,3 @@
-## Sharing-data-between-angular-components
-https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
+## Grid Checkbox check All & S.no for Grid
+https://stackblitz.com/edit/angular-29tq8d
 

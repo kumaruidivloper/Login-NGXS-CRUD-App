@@ -12,6 +12,7 @@
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th>S.No</th>
             <th>User Id</th>
             <th>User Name</th>
             <th>Details</th>
@@ -20,7 +21,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users | async">
+          <tr *ngFor="let user of users | async; let i = index">
+            <td class="text-left">{{i + 1}}</td>
             <td>{{ user.userId }}</td>
             <td>{{ user.name }}</td>
             <td>

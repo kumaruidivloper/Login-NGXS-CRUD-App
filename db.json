@@ -1,16 +1,6 @@
 {
   "sampleProducts": [
     {
-      "id": 4,
-      "userId": 4000004,
-      "name": "User_004"
-    },
-    {
-      "id": 5,
-      "userId": 5,
-      "name": "User_005"
-    },
-    {
       "id": 6,
       "userId": 400,
       "name": "Kumar"
