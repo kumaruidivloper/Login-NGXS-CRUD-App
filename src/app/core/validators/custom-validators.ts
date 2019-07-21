@@ -27,7 +27,7 @@ export class CustomValidators {
       // if they don't match, set an error in our confirmPassword form control
       control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
     } else {
-      control.get('confirmPassword').setErrors({ NoPassswordMatch: false });
+      // control.get('confirmPassword').setErrors({ NoPassswordMatch: false });
       // control.get('confirmPassword').setValue([{NgClass = 'invalid'}]);
     }
   }
