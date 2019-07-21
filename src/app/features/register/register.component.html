@@ -10,7 +10,9 @@
                     <!--[ngClass]="frmSignup.controls['email'].invalid ? 'text-danger' : ''"-->
                     <!--[ngClass]="frmSignup.controls['email'].invalid ? 'is-invalid' : ''"-->
                   <label for="email">Email Address</label>
-                  <input id="email" formControlName="email" type="email" class="form-control">
+                  
+                  <input id="email" formControlName="email" type="email" class="form-control" [ngClass]="frmSignup.controls['email'].value != null && frmSignup.controls['email'].value != '' && frmSignup.controls['email'].invalid ? 'is-invalid' : ''">
+                  <!-- <pre>{{frmSignup.controls['email'].value}}</pre> -->
                   <div *ngIf="frmSignup.controls['email'].invalid && (frmSignup.controls['email'].dirty || frmSignup.controls['email'].touched)">
                   <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('required')">
                     Email is Required!
@@ -24,7 +26,7 @@
                     <!--[ngClass]="frmSignup.controls['password'].invalid ? 'text-danger' : ''"-->
                     <!--[ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''"-->
                   <label for="password">Password:</label>
-                  <input id="password" formControlName="password" type="password" class="form-control">
+                  <input id="password" formControlName="password" type="password" class="form-control" [ngClass]="frmSignup.controls['password'].value != null && frmSignup.controls['password'].value != '' && frmSignup.controls['password'].invalid ? 'is-invalid' : ''">
                   <!-- <label class="text-danger col" *ngIf="frmSignup.controls['password'].hasError('required')">
                     Password is Required!
                   </label> -->
@@ -65,7 +67,7 @@
                     <!--[ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'text-danger' : ''"-->
                     <!--[ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''"-->
                   <label for="confirmPassword">Confirm Password:</label>
-                  <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control">
+                  <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" [ngClass]="frmSignup.controls['confirmPassword'].value != null && frmSignup.controls['confirmPassword'].value != '' && frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
                     <div *ngIf="frmSignup.controls['confirmPassword'].invalid && (frmSignup.controls['confirmPassword'].dirty || frmSignup.controls['confirmPassword'].touched)">
                   <label class="text-danger" *ngIf="frmSignup.controls['confirmPassword'].hasError('required')">
                     Password is Required!
