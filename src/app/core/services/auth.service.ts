@@ -17,7 +17,7 @@ export class AuthService {
   loginUser(user) {
     console.log(user);
     return this.http
-    .post<{token: string, expiresIn: number}>(this.loginUrl, user);
+    .post<{token: string, expiresIn: number, user: object}>(this.loginUrl, user);
   }
 
   loggedIn() {
@@ -26,6 +26,7 @@ export class AuthService {
 
   logoutUser() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 
