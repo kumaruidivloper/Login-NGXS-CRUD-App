@@ -7,12 +7,22 @@ import { UserComponent } from './user.component';
 import { ModalModule } from 'ngx-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
+// import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
 
 const routes: Routes = [
   { path: '', component: UserListComponent },
-  { path: ':id/details', component: UserFormComponent },
-  { path: ':id/edit', component: UserFormComponent },
-  { path: 'adduser', component: UserFormComponent }
+  { path: 'details/:id', component: UserFormComponent,
+  data: {
+    breadcrumb: 'User Details'
+  }, },
+  { path: 'edit/:id', component: UserFormComponent,
+  data: {
+    breadcrumb: 'Update User'
+  }, },
+  { path: 'adduser', component: UserFormComponent,
+  data: {
+    breadcrumb: 'Create User'
+  }, }
 ];
 
 @NgModule({
@@ -23,6 +33,7 @@ const routes: Routes = [
     UserListComponent
   ],
   imports: [
+    // BreadcrumbsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     CommonModule,

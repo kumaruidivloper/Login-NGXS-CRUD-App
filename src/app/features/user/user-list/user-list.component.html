@@ -26,10 +26,10 @@
             <td>{{ user.userId }}</td>
             <td>{{ user.name }}</td>
             <td>
-              <button class="btn btn-info" (click)="userDetail(user, 'Detail')" [routerLink]="[user.id, 'details']"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+              <button class="btn btn-info" (click)="userDetail(user, 'Detail')" [routerLink]="['details', user.id]"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
             </td>
             <td>
-              <button type="button" class="btn btn-warning" (click)="editUser(user, 'Update')" [routerLink]="[user.id, 'edit']"><i class="fa fa-edit"></i></button>
+              <button type="button" class="btn btn-warning" (click)="editUser(user, 'Update')" [routerLink]="['edit', user.id]"><i class="fa fa-edit"></i></button>
             </td>
             <td>
               <button type="button" class="btn btn-danger" (click)="openModal(template,user)"><i class="fa fa-trash"></i></button>

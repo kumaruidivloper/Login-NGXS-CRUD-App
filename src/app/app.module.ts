@@ -10,6 +10,7 @@ import { LoginComponent } from './features/login/login.component';
 import { TokenInterceptorService } from './core/interceptors/token-interceptor.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BreadcrumbsModule } from '../app/core/components/breadcrumbs/breadcrumbs.module';
 
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -27,6 +28,7 @@ import { environment } from './../environments/environment';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BreadcrumbsModule,
     RouterModule.forRoot([]),
     NgxsModule.forRoot(
       [

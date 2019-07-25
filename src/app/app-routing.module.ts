@@ -8,20 +8,32 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      breadcrumb: 'Home'
+    },
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: {
+      breadcrumb: 'login'
+    },
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    data: {
+      breadcrumb: 'Register'
+    }
   },
   {
     path: 'user',
+    data: {
+      breadcrumb: 'User'
+    },
     loadChildren: './features/user/user.module#UserModule',
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   }
 ];
 
