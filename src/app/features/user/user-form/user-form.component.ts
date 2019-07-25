@@ -33,9 +33,10 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.data.currentMessage.subscribe(message => this.isAction = message);
-      localStorage.setItem('action', this.isAction);
-      console.log(this.isAction);
+      this.isAction = localStorage.getItem('action');
+    //   this.data.currentMessage.subscribe(message => this.isAction = message);
+    //   localStorage.setItem('action', this.isAction);
+    //   console.log(this.isAction);
       const id = +this.route.snapshot.paramMap.get('id');
       console.log(id);
       if (id > 0) {

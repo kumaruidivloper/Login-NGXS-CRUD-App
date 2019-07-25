@@ -65,6 +65,7 @@ export class UserListComponent implements OnInit {
   // }
 
   editUser(payload: User, type) {
+      localStorage.setItem('action', type);
       this.type = type;
       this.data.changeMessage(this.type);
       this.store.dispatch(new SetSelectedUser(payload));
@@ -74,10 +75,12 @@ export class UserListComponent implements OnInit {
       this.type = type;
       console.log(type);
       this.data.changeMessage(this.type);
+      localStorage.setItem('action', type);
       this.store.dispatch(new SetSelectedUser(payload));
   }
 
   addUser(type) {
+    localStorage.setItem('action', type);
     this.type = type;
     this.data.changeMessage(this.type);
     // this.router.navigateByUrl('adduser');
