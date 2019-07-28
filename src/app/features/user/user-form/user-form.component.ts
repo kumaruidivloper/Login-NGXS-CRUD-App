@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,14 +8,16 @@ import { Observable } from 'rxjs';
 import { User } from '../../../core/interfaces/user.model';
 import { UserService } from '../../../core/services/user.service';
 import { DataService } from '../../../core/services/data.service';
+import { FormCanDeactivate } from '../../../core/guards/form-can-deactivate';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
-export class UserFormComponent implements OnInit {
-
+export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
+  form: NgForm;
   @Select(UserState.getSelectedUser) selectedUser: Observable<User>;
   public userForm: FormGroup;
   public editUser = false;
@@ -29,6 +31,7 @@ export class UserFormComponent implements OnInit {
       private userService: UserService,
       private data: DataService,
       private router: Router) {
+      super();
       this.createForm();
   }
 
