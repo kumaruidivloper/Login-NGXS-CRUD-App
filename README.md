@@ -1,4 +1,4 @@
-## Prevent Unsaved Form ChangesGuard
+## Prevent Unsaved Form ChangesGuard Modal Dialog Confirm
 
-https://github.com/mosh-hamedani/angular2-course/blob/master/app/prevent-unsaved-changes-guard.service.ts
+https://stackoverflow.com/questions/46433195/angular-use-modal-dialog-in-candeactivate-guard-service-for-unsubmitted-changes
 

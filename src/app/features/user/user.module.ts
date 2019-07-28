@@ -8,6 +8,7 @@ import { ModalModule } from 'ngx-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { PreventUnsavedChangesGuard } from '../../core/guards/prevent-unsaved-changes-gauard';
+import { ConfirmLeaveComponent } from '../../core/components/confirm-leave/confirm-leave.component';
 // import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
     UserFormComponent,
     UserDetailComponent,
     UserComponent,
-    UserListComponent
+    UserListComponent,
+    ConfirmLeaveComponent
   ],
   imports: [
     // BreadcrumbsModule,
@@ -43,6 +45,9 @@ const routes: Routes = [
   ],
   providers: [
     PreventUnsavedChangesGuard
-  ]
+  ],
+  entryComponents: [
+    ConfirmLeaveComponent,
+  ],
 })
 export class UserModule { }
