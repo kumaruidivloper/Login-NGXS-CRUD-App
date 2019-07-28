@@ -7,6 +7,7 @@ import { UserComponent } from './user.component';
 import { ModalModule } from 'ngx-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
+import { PreventUnsavedChangesGuard } from '../../core/guards/prevent-unsaved-changes-gauard';
 // import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     breadcrumb: 'User Details'
   }, },
   { path: 'edit/:id', component: UserFormComponent,
+  canDeactivate: [ PreventUnsavedChangesGuard ],
   data: {
     breadcrumb: 'Update User'
   }, },
@@ -38,6 +40,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     ModalModule.forRoot()
+  ],
+  providers: [
+    PreventUnsavedChangesGuard
   ]
 })
 export class UserModule { }
