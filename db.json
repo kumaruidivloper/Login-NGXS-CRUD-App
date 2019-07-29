@@ -2,18 +2,8 @@
   "sampleProducts": [
     {
       "id": 1,
-      "userId": 100,
-      "name": "Kumarr"
-    },
-    {
-      "id": 2,
-      "userId": 55435435,
-      "name": "Krishaan Kf"
-    },
-    {
-      "id": 3,
-      "userId": 324324,
-      "name": "dfdsfdsf"
+      "userId": 1000,
+      "name": "Krishaan"
     }
   ],
   "Assessment_Details": [

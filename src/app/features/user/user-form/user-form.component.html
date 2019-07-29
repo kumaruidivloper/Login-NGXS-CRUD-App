@@ -26,7 +26,27 @@
                 </button>
                 <button type="button" class="btn btn-primary mr-1" [routerLink]="['/user']">Cancel</button>
                 <button type="button" class="btn btn-danger" [disabled]="isDisable || userForm.pristine || userForm.invalid" (click)="clearForm()" *ngIf="isAction !== 'Detail'">Reset</button>
+                <button type="button" class="btn btn-danger" (click)="openModal(template, selectedId, userForm.controls['userId'].value)" *ngIf="isAction === 'Detail'">Delete</button>
             </div>
         </form>
     </div>
 </div>
+
+
+<ng-template #template >
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Delete Selected User</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body text-left">
+          <p>Do you want to really delete this User ID: <b class="text-warning">{{selectedUserr}}</b> ? Please click 
+          <b class="text-info">Yes</b> to confirm</p>
+        </div>
+    
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="confirm(selectedId)">Yes</button>
+            <button type="button" class="btn btn-info" (click)="decline()">No</button>
+       </div>
+</ng-template>

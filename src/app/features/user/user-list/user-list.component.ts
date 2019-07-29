@@ -34,6 +34,7 @@ export class UserListComponent implements OnInit {
 
 
   openModal(template: TemplateRef<any>, user: User) {
+    console.log(user);
     this.selectedUser = user.userId;
     this.selectedId = user.id;
     this.modalRef = this.modalService.show(template, {class: 'modal-md'});

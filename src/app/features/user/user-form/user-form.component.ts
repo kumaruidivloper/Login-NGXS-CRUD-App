@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,6 +10,8 @@ import { UserService } from '../../../core/services/user.service';
 import { DataService } from '../../../core/services/data.service';
 import { FormCanDeactivate } from '../../../core/guards/form-can-deactivate';
 import { NgForm } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { DeleteUser, GetUsers, SetSelectedUser } from '../../user/+state/user.action';
 
 @Component({
   selector: 'app-user-form',
@@ -20,9 +22,13 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
   form: NgForm;
   @Select(UserState.getSelectedUser) selectedUser: Observable<User>;
   public userForm: FormGroup;
+  public modalRef: BsModalRef;
   public editUser = false;
   public isDisable = false;
   public isAction: string;
+  public message: string;
+  public selectedId: any;
+  public selectedUserr: any;
 
   constructor(
       private fb: FormBuilder,
@@ -30,6 +36,7 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
       private route: ActivatedRoute,
       private userService: UserService,
       private data: DataService,
+      private modalService: BsModalService,
       private router: Router) {
       super();
       this.createForm();
@@ -42,6 +49,7 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
     //   console.log(this.isAction);
       const id = +this.route.snapshot.paramMap.get('id');
       console.log(id);
+      this.selectedId = id;
       if (id > 0) {
       this.isDisable = true;
       this.getUser(id);
@@ -60,9 +68,16 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
       }
   }
 
+  openModal(template: TemplateRef<any>, user: User, userId) {
+    console.log(userId);
+    this.selectedUserr = userId;
+    this.selectedId = user;
+    this.modalRef = this.modalService.show(template, {class: 'modal-md'});
+  }
+
   getUser(id: number) {
       this.userService.selectedUsers(id).subscribe(selectedUser => {
-          this.userForm.patchValue({
+        this.userForm.patchValue({
               id: selectedUser.id,
               userId: selectedUser.userId,
               name: selectedUser.name
@@ -91,6 +106,19 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
               this.router.navigate(['user']);
           });
       }
+  }
+
+  confirm(id: number): void {
+    console.log(id);
+    this.message = 'Confirmed!';
+    this.modalRef.hide();
+    this.store.dispatch(new DeleteUser(id));
+    this.router.navigate(['user']);
+  }
+
+  decline(): void {
+    this.message = 'Declined!';
+    this.modalRef.hide();
   }
 
   clearForm() {
