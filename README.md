@@ -1,6 +1,6 @@
-## Prevent Unsaved Form ChangesGuard Modal Dialog Confirm [On Refresh]
+## DB Connection String Update
 
-https://stackblitz.com/edit/angular-rgsa51
-
-https://medium.com/better-programming/angular-how-keep-user-from-lost-his-data-by-accidentally-leaving-the-page-before-submit-4eeb74420f0d
+// DB Connection String
+// [old connection String] const db = "mongodb+srv://kumar:kumar1234@cluster0-t6xml.mongodb.net/test?retryWrites=true"
+const db = 'mongodb+srv://kumar:kumar1234@cluster0-t6xml.mongodb.net/test?retryWrites=true&w=majority'
 
