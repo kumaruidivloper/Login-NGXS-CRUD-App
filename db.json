@@ -2,7 +2,7 @@
   "sampleProducts": [
     {
       "id": 1,
-      "userId": 1000,
+      "userId": 100,
       "name": "Krishaan"
     }
   ],
