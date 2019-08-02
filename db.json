@@ -2,8 +2,18 @@
   "sampleProducts": [
     {
       "id": 1,
-      "userId": 3434324,
-      "name": "fdfds"
+      "userId": 1234,
+      "name": "fdsfdsd"
+    },
+    {
+      "id": 2,
+      "userId": 129,
+      "name": "adfad"
+    },
+    {
+      "id": 3,
+      "userId": 34634,
+      "name": "ffsdfds"
     }
   ],
   "Assessment_Details": [

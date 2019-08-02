@@ -12,23 +12,28 @@ import { ConfirmLeaveComponent } from '../../core/components/confirm-leave/confi
 import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
 
 const routes: Routes = [
-  { path: '', component: UserListComponent,
+  { path: '', component: UserComponent,
+  data: {
+    breadcrumb: 'Dashboard'
+  }
+  },
+  { path: 'user', component: UserListComponent,
   data: {
     breadcrumb: 'User List'
   }
   },
-  { path: 'details/:id', 
+  { path: 'user/details/:id', 
   component: UserFormComponent,
   data: {
     breadcrumb: 'User Details'
   }
   },
-  { path: 'edit/:id', component: UserFormComponent,
+  { path: 'user/edit/:id', component: UserFormComponent,
   canDeactivate: [ PreventUnsavedChangesGuard ],
   data: {
     breadcrumb: 'Update User'
   }, },
-  { path: 'adduser', component: UserFormComponent,
+  { path: 'user/adduser', component: UserFormComponent,
   data: {
     breadcrumb: 'Create User'
   }, }

@@ -24,7 +24,7 @@
                 <button type="submit"class="btn btn-success mr-1" *ngIf="isAction !== 'Detail'"
                         [disabled]="userForm.pristine || userForm.invalid">Submit
                 </button>
-                <button type="button" class="btn btn-primary mr-1" [routerLink]="['/user']">Cancel</button>
+                <button type="button" class="btn btn-primary mr-1" [routerLink]="['/dashboard/user']">Cancel</button>
                 <button type="button" class="btn btn-danger" [disabled]="isDisable || userForm.pristine || userForm.invalid" (click)="clearForm()" *ngIf="isAction !== 'Detail'">Reset</button>
                 <button type="button" class="btn btn-danger" (click)="openModal(template, selectedId, userForm.controls['userId'].value)" *ngIf="isAction === 'Detail'">Delete</button>
             </div>

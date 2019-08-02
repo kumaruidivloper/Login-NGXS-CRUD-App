@@ -100,13 +100,13 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
       if (this.editUser) {
           this.store.dispatch(new UpdateUser(this.userForm.value, this.userForm.value.id)).subscribe(() => {
               this.clearForm();
-              this.router.navigate(['user']);
+              this.router.navigate(['dashboard/user']);
           });
       } else if (this.userForm.value.userId != null) {
           console.log(this.userForm.value.userId);
           this.store.dispatch(new AddUser(this.userForm.value)).subscribe(() => {
               this.clearForm();
-              this.router.navigate(['user']);
+              this.router.navigate(['dashboard/user']);
           });
       }
   }

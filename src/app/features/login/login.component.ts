@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
         const response = JSON.parse(JSON.stringify(res));
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', response.user.email);
-        this.router.navigate(['/user']);
+        this.router.navigate(['/dashboard']);
       },
       err => this.errorMsg = err.error
     );

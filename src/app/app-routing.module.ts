@@ -28,9 +28,9 @@ const routes: Routes = [
     }
   },
   {
-    path: 'user',
+    path: 'dashboard',
     data: {
-      breadcrumb: 'User List'
+      breadcrumb: 'Dashboard'
     },
     loadChildren: './features/user/user.module#UserModule',
     canActivate: [AuthGuard],
