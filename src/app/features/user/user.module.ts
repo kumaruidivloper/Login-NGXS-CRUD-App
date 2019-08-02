@@ -9,14 +9,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { PreventUnsavedChangesGuard } from '../../core/guards/prevent-unsaved-changes-gauard';
 import { ConfirmLeaveComponent } from '../../core/components/confirm-leave/confirm-leave.component';
-// import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
+import { BreadcrumbsModule } from '../../core/components/breadcrumbs/breadcrumbs.module';
 
 const routes: Routes = [
-  { path: '', component: UserListComponent },
-  { path: 'details/:id', component: UserFormComponent,
+  { path: '', component: UserListComponent,
+  data: {
+    breadcrumb: 'User List'
+  }
+  },
+  { path: 'details/:id', 
+  component: UserFormComponent,
   data: {
     breadcrumb: 'User Details'
-  }, },
+  }
+  },
   { path: 'edit/:id', component: UserFormComponent,
   canDeactivate: [ PreventUnsavedChangesGuard ],
   data: {
@@ -37,11 +43,12 @@ const routes: Routes = [
     ConfirmLeaveComponent
   ],
   imports: [
-    // BreadcrumbsModule,
+    BreadcrumbsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     CommonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BreadcrumbsModule
   ],
   providers: [
     PreventUnsavedChangesGuard

@@ -77,10 +77,13 @@ export class UserFormComponent  extends FormCanDeactivate  implements OnInit   {
 
   getUser(id: number) {
       this.userService.selectedUsers(id).subscribe(selectedUser => {
+        console.log(selectedUser);
+        const selectedUserr = JSON.parse(JSON.stringify(selectedUser));
+        console.log(selectedUserr);
         this.userForm.patchValue({
-              id: selectedUser.id,
-              userId: selectedUser.userId,
-              name: selectedUser.name
+              id: selectedUserr.id,
+              userId: selectedUserr.userId,
+              name: selectedUserr.name
           });
       });
   }

@@ -53,8 +53,9 @@ export class LoginComponent implements OnInit {
           }, expiresInDuration * 3000);
         }
         console.log(res);
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('user', res.user.email);
+        const response = JSON.parse(JSON.stringify(res));
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('user', response.user.email);
         this.router.navigate(['/user']);
       },
       err => this.errorMsg = err.error

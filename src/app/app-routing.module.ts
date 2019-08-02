@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: 'user',
     data: {
-      breadcrumb: 'User'
+      breadcrumb: 'User List'
     },
     loadChildren: './features/user/user.module#UserModule',
     canActivate: [AuthGuard],
