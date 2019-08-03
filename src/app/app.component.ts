@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  // tslint:disable-next-line: use-life-cycle-interface
-  ngAfterViewChecked() {
+  ngDoCheck() {
     this.user = localStorage.getItem('user');
   }
 }
