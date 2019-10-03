@@ -17,6 +17,10 @@ Step3: npm install @ngxs/logger-plugin@dev --save [Yarn: yarn add @ngxs/logger-p
 ![NGXS-2](https://user-images.githubusercontent.com/30646609/60645886-87d90180-9e57-11e9-818d-d1c6f8eea6fd.png)
 ![NGXS-1](https://user-images.githubusercontent.com/30646609/60645850-798ae580-9e57-11e9-9280-3a7a131b73e2.png)
 
+![redux flow](https://user-images.githubusercontent.com/30646609/66142101-7c49d200-e622-11e9-8f3f-0ba8f6795ed9.gif)
+![redux](https://user-images.githubusercontent.com/30646609/66142102-7ce26880-e622-11e9-9414-a75208a97c37.gif)
+![SociableCraftyAlpaca-small](https://user-images.githubusercontent.com/30646609/66142103-7ce26880-e622-11e9-8f90-b8846c6d6c6e.gif)
+
 
 ## Angular Vs React
 
