@@ -26,3 +26,11 @@ Step2: Open angular.json
 There are many ways to do that. The simpest method is by using the [src/styles.css]file and adding the following code:
 URL: https://www.techiediaries.com/angular-bootstrap-ui/
 @import "~bootstrap/dist/css/bootstrap.css";
+
+
+
+Step: 1 https://www.mongodb.com/
+Step: 2 kumaruidivloper@gmail.com
+Step: 3 $Kumar2794
+Step: 4 npm run start [app start]
+Step: 5 node server [run server]
